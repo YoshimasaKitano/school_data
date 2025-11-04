@@ -22,7 +22,13 @@ class SampleClass extends ParentClass implements SomeInterface
     // ・引数を列挙するときのカンマの前にスペースを入れない(MUST NOT)
     // ・引数を列挙するときのカンマの後にスペース1つを入れる(MUST)
     public function doSomething1(string $arg1, int $arg2)
-    {
+    { // ←開始の波括弧は行を分ける(MUST)
         
-    }
+        // 処理...
+
+    } // ←終了の波括弧も行を分ける(MUST)
+
+    // ・引数のnullを許可するクエスチョン記号とデータ型の間にスペースを入れない(MUST NOT)
+    // ・引数の参照渡しを表すアンパサンド記号と引数名の間にスペースを入れない(MUST NOT)
+    // ・デフォルト値をもつ引数は最後に書く(MUST)
 }
