@@ -1,0 +1,2 @@
+■honkakuデータベース作成
+CREATE DATABASE honkaku DEFAULT CHARACTER SET utf8mb4;

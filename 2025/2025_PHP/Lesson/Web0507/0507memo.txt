@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="css/style.css">
+cssというファイルを新たに作ってさらにその中にstyle.cssというファイルを作る
+その中にcssをすべてコピーしてHTMLの方は消す。
+→外部CSS
+
+@charset "UTF-8"を外部CSSの一番上に書く
+→これを書くことを忘れないこと→Unicodeが使えなくなるから。

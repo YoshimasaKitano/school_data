@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.flash-success {
+    padding: 10 ;
+    color: #00ff00;
+    background-color: #a5cea53d;
+}
+.error {
+    color: #ff0000;
+}
+.submit_button {
+    padding: 5, 10;
+    color: #ffffff;
+    background-color: #0026ff;
+}

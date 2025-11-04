@@ -1,0 +1,26 @@
+2025.06.06 Linux基礎 WH1A　3限目(NWと１限目入れ替え)
+
+ファイルを探す。
+findコマンド
+find 探す起点のディレクトリ -name "検索ワード" -print
+
+find -type f ファイルを探す
+find -type d ディレクトリを探す
+find -type l リンクを探す
+
+コマンドの実体の場所を探す
+whichコマンド
+
+VI/Vimエディタ
+
+使い方：which コマンド名
+例：
+[user01@linux ~]$ which cat
+/usr/bin/cat
+
+------------------
+次回、VIM
+インストール確認
+v1.4仕様書レビュー承認
+
+

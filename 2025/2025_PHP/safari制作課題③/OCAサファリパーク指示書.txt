@@ -1,0 +1,54 @@
+【OCAサファリパークサイト】指示書
+
+指示書と見本画像データに従ってコーディングしてください。
+
+■HTML構造化
+・できるだけ意味のあるタグを使用
+・インデントは正しく設定
+・コメント
+
+■CSSデザイン
+・外部CSS
+・できるだけセマンティックな記述
+・インデントは正しく設定
+・コメント
+
+■PHPプログラム
+・XAMPPの環境にフォルダごと配置して実行
+
+■画像データ
+・imagesフォルダに格納して表示
+
+■全5ページ
+・index.html（メインビジュアルは幅100%設定）
+・animal.html（自由制作）
+・contact.html
+・access.html
+・confirm.php
+
+■リンク
+・メニューボタンは相対パスで記述
+　　<ul>
+    　<li><a href="./">ホーム</a></li>
+    　<li><a href="animal.html">動物たち</a></li>
+    　<li><a href="contact.html">ご来場者プレゼント</a></li>
+      <li><a href="access.html">アクセス</a></li>
+　　</ul>
+
+・サイトロゴにはトップページのリンクを設定する
+・右下にトップへ戻るボタンを配置
+
+■SNS
+・SNSアイコンはFont Awesomeを使用
+　（https://fontawesome.com/search）
+　→head内の設定
+　　<script src="https://kit.fontawesome.com/6643e64c88.js" crossorigin="anonymous"></script>
+・SNSリンクは新しいウインドウで開く
+・ホバーすると黒から白に色変更
+
+
+※注意
+・XAMPPについては6月に講義予定。
+・相対パスについては6月に講義予定。
+・SNSアイコンは登録が必要なので授業用に用意したものを使用する。（head内に設定）
+

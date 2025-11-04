@@ -1,0 +1,402 @@
+@charset "UTF-8";
+body{
+    background-image: url(bgAnimal600.png);
+    background-position: 0 364px;
+}
+.personalbody{
+    background-image: url(f049f14d37d05092b186f33cbdf224e9.jpg);
+}
+header{
+    z-index: 9999 ;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 0;
+    background-color: 	#01C201;
+}
+.title ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.title ul li{
+    margin: 0 5px;
+}
+.title ul li img{
+    width: 74px;
+}
+.title ul li a{
+    color: #000000;
+    text-decoration: none;
+}
+h1{
+    font-size: 43px;
+}
+.small{
+    font-size: 25px;
+}
+.navigation ul{
+    position: relative;
+    top: 15px;
+    display: flex;
+    justify-content: space-around;
+    width: 1200px;
+    list-style: none;
+}
+.navigation ul li{
+    width: 900px;
+    color: #000000;
+    text-align: center;
+}
+.navigation ul li + li{
+    border-left: solid 2px #000000;
+}
+.navigation ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 900;
+}
+.navigation ul li a:hover{
+    color: #ffffff;
+}
+.personal_main section{
+    margin: 20px auto 0px;
+}
+h2{
+    margin: 80px auto;
+    text-align: center;
+    font-size: 50px;
+}
+.personal_text{
+    width: 1200px;
+    margin: 0px auto;
+}
+.animal-space{
+    width: 1800px;
+    height: 1250px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: solid 5px #01C201;
+}
+.animaltitle{
+    width: 1000px;
+    margin: 100px auto 20px;
+}
+.animalname{
+    width: 1000px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 30px;
+}
+.animalspace{
+    width: 1200px;
+    margin: 0 auto;
+    height: 800px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: solid 5px #01C201;
+}
+.animal{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.animalpictures{
+    display: flex;
+    justify-content: space-between;
+    width: 1800px;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+.animalpicture{
+    display: block;
+    width: 250px;
+}
+.animalpicture a{
+    text-decoration: none;
+    color: #000000;
+}
+.animalpicture:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: .3s;
+}
+.animalpicturesize{
+    width: 250px;
+    object-fit: cover;
+    aspect-ratio: 20 / 20;
+    border-radius: 30px;
+}
+.animaltext{
+font-size: 20px;
+}
+.hipopotamus{
+    display: block;
+    width: 1000px;
+    margin: 0 auto;
+    height: 700px;
+    object-fit: cover;
+    position: relative;
+    top: 20px;
+    border-radius: 50px;
+}
+.capybara{
+    display: block;
+    width: 1000px;
+    margin: 0 auto;
+    height: 700px;
+    background-size: 250%;
+    background-position: 0% 50% ;
+    position: relative;
+    top: 20px;
+    border-radius: 50px;
+ 
+}
+.animalbtn-{
+    display: flex;
+    position: relative;
+    bottom: 450px;
+}
+.animal-text{
+    width: 1000px;
+    margin: 10px auto;
+    text-align: left;
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+}
+.animalbtn{
+    display: flex;
+    position: relative;
+    left: 1650px;
+    justify-content: center;
+    align-items: center;
+}
+.animalbtns .animalbtn{
+  position: relative;
+  animation: arrow-move06 2s 1s ease-in-out infinite;
+}
+.animalbtns .animalbtn:before {
+  position: absolute;
+  content: '▶';
+  top: 0;
+  left: 50%;
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+  color: #01C201;
+  border: 4px solid #01C201;
+  border-radius: 100%;
+  transition: all 0.5s ease-in;
+}
+.animalbtns .animalbtn:hover:before {
+  color: #000;
+  border-color: #000;
+  transform: rotate(360deg);
+}
+@keyframes arrow-move06 {
+    0% { top: 1%; opacity: 0.3;}
+   70% { top: 10%; opacity: 1;}
+  100% { top: 1%; opacity: 0.3;}
+}
+.animal-btn{
+    display: flex;
+    position: relative;
+    left: 295px;
+    justify-content: center;
+    align-items: center;
+  }
+  .animal-btns .animal-btn{
+    position: relative;
+    animation: arrow-move06 2s 1s ease-in-out infinite;
+  }
+  .animal-btns .animal-btn:before {
+    position: absolute;
+    content: '◀';
+    top: 0;
+    left: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    line-height: 2em;
+    text-align: center;
+    color: #01C201;
+    border: 4px solid #01C201;
+    border-radius: 100%;
+    transition: all 0.5s ease-in;
+  }
+  .animal-btns .animal-btn:hover:before {
+    color: #000;
+    border-color: #000;
+    transform: rotate(360deg);
+  }
+  @keyframes arrow-move06 {
+      0% { top: 1%; opacity: 0.3;}
+     70% { top: 10%; opacity: 1;}
+    100% { top: 1%; opacity: 0.3;}
+  }  
+.animaltop{
+    display: block;
+    width: 300px;
+    margin: 70px auto;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    background-color: #01C201;
+    border-radius: 50px;
+    border: solid 2px #ffffff;
+}
+.animaltop:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.accessmain{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px auto;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: solid 5px #01C201;
+}
+.access{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    list-style: none;
+}
+.access .accesspage{
+    position: relative;
+    top: 60px;
+}
+.access .accesspage p{
+    line-height: 50px;
+    text-align: left;
+}
+.access-icon{
+    text-align: center;
+}
+.smallaccess{
+    font-size: 20px;
+}
+.formpage{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: solid 7px #01C201;
+}
+.formpage h3{
+    text-align: left;
+    font-size: 24px;
+}
+.formtext{
+    line-height: 50px;
+}
+.formbox{
+    width: 170px;
+    height: 30px;
+    margin: 0 0 0 35px;
+}
+.gendertext{
+    margin: 0 9px 0 35px;
+}
+.formpage form ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 650px;
+    margin: 0 auto;
+}
+.formpage form ul li{
+    list-style: none;
+}
+.formpage form ul li input{
+    width: 200px;
+    height: 40px;
+}
+.formpersonal{
+    color: #0000ff;
+}
+.confirmmain{
+    width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: solid 5px #01C201;
+    font-size: 24px;
+}
+.confirmmain .comment {
+    width: 1400px;
+}
+.confirmmain h3{
+    margin: 40px auto auto;
+    text-align: center;
+}
+.confirmmain h4{
+    margin: 70px auto 30px;
+    text-align: center;
+}
+#page-top{
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+}
+.topbtn{
+    width: 100px;
+}
+.topbtn:hover{
+    opacity: .5;
+    transition: .3s;
+}
+footer{
+    margin: 4% 0 0;
+    padding: 30px 0 0;
+    text-align: center;
+    background-color: 	#01C201;
+}
+footer img{
+    margin: 0 auto 20px;
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+footer ul li{
+    width: 80px;
+}
+footer ul li a{
+    color: #000;
+}
+footer ul li a:hover{
+    color: #ffffff;
+    transition: .3s;
+}
+footer ul li i{
+    width: 50px;
+}
+.copy{
+    padding: 0 0 10px;
+}
+.fa-brands fa-twitter{
+    font-size: 20px;
+}

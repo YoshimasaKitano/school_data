@@ -1,0 +1,19 @@
+#2025/10/24 1号機　コンフィグ　
+#作成者　北野、岡本
+
+# RTX830 Rev.15.02.28 (Wed Dec 28 19:47:51 2022)
+# MAC Address : ac:44:f2:2b:f6:28, ac:44:f2:2b:f6:29
+# Memory 256Mbytes, 2LAN
+# main:  RTX830 ver=00 serial=M5B502890 MAC-Address=ac:44:f2:2b:f6:28 MAC-Addre
+ss=ac:44:f2:2b:f6:29
+# Reporting Date: Oct 24 13:01:11 2025
+ip route 10.0.12.0/24 gateway 10.0.12.202
+ip route 192.168.202.0/24 gateway 10.0.12.202
+ip lan1 address 192.168.201.254/24
+ip lan2 address 10.0.12.201/24
+telnetd host lan
+dhcp scope 1 192.168.201.10-192.168.201.99/24
+
+
+10.0.12.0/24        10.0.12.202            LAN2    static
+192.168.201.0/24    192.168.201.254        LAN1  implicit

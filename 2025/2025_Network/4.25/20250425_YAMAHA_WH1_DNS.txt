@@ -1,0 +1,18 @@
+www.oca.ac.jp. =FQDN　= IPアドレス
+
+www.       =ホスト名
+oca.ac.jp. =ドメイン名
+
+
+DNSサーバとは、
+Domain Name Systemの略：FQDNをIPアドレスに変換してくれる＝名前解決
+
+FQDN→IPアドレス（順引き）
+IPアドレス→FQDN（逆引き）
+
+スループット＝時間単位当たりの処理性能
+通信速度＝bps(単位)=bit per second 1秒あたりに送信可能なbitの数
+帯域
+
+8bit=1Byte
+

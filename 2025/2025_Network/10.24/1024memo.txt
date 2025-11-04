@@ -1,0 +1,3 @@
+sudo nmcli connection→sudo nmcli conでもOK
+
+トラブルシューティングは、ハード系から行う→そこから通信の確認だったりを行っていく。

@@ -1,0 +1,223 @@
+スライスは文字列から文字を取り出すことを指す
+
+id = "〇〇〇"
+print(id[△])→文字列を一番前の文字を0から数えて何番目になんの文字があるかがわかる
+0から数えることんに注意
+データを抜き取っているわけではない
+(例)
+id = "abcdefghi"
+
+print(id[2]) ### c
+print(id[5]) ### f
+
+文字列のインデックス番号を指定して文字を代入しても変更することはできない
+(例)
+id = "abcdefghi"
+id[0] = "x"
+print(id) ### エラー
+
+範囲を指定してスライスするとき[開始位置:終了位置]
+※終了位置は終了位置に設定した値の一つ手前までが出力される
+(例)
+s = "The quick brown fox jumps over the lazy dog."
+print(s[2:6]) ### e qu
+print(s[4:9]) ### quick
+
+全部抜き出したいときは[:]
+s = "The quick brown fox jumps over the lazy dog."
+print(s[:]) ### The quick brown fox jumps over the lazy dog.
+
+開始位置から全部抜き出したいときは[〇:]
+s = "The quick brown fox jumps over the lazy dog."
+print(s[11:]) ### rown fox jumps over the lazy dog.
+
+終了位置から全部抜き出したいときは[:〇]
+s = "The quick brown fox jumps over the lazy dog."
+print(s[:11]) ### The quick b
+
+指定場所から指定文字数分だけ抜き出したいときは[〇:〇+△]
+s = "The quick brown fox jumps over the lazy dog."
+print(s[10:10+5]) ### brown
+
+インデックス番号は後ろから数えることもできる
+-1→-2→－3…
+
+後ろからカウントしたインデックス番号でも範囲を指定することができる
+s = "The quick brown fox jumps over the lazy dog."
+print(s[:-19]) ### The quick brown fox jumps
+print(s[-18:-1]) ### over the lazy dog
+
+len()→文字数をカウントしてくれる関数
+(例)
+s = "The quick brown fox jumps over the lazy dog."
+print(len(s)) ### 44
+
+文字数を超えた位置指定をするとエラーになるが、文字数を超えた範囲指定をすると全文表示されるという違いに注意。
+(例)
+print(s[50]) ### IndexError
+print(s[:50]) ### The quick brown fox jumps over the lazy dog.
+
+ステップ値→何個ずつ飛ばしていくか
+[開始位置:終了位置:ステップ値]
+(例)
+num = "0123456789"
+print(num[:]) ### 0123456789
+print(num[::]) ### 0123456789
+print(num[::1]) ### 0123456789
+print(num[::2]) ### 02468
+print(num[1::2]) ### 13579
+
+ステップ値はデフォルトで最初から1が指定されている
+
+ステップ値をマイナスで指定すると後ろから飛ばしていくことになる。
+(例)
+print(num[::-1]) ### 9876543210
+
+比較演算子→左右の値を比較する
+
+論理値(ブール値)→その値があっているか間違っているか。YesかNoかを返す。
+
+==→左右が等しいかどうか
+※=だと代入になってしまうので必ず2個つけること。
+(例)
+a = 3; b = 3; c = 5
+print(a == b) ### True :正しい場合(真)
+print(a == c) ### False :間違っている場合(偽)
+
+投げかけたものに対して正しい場合はTrue、間違っている場合はFalseと返される。
+※どちらも頭は大文字であることに注意
+
+数字でも比較することができる。
+(例)
+print(10 == 10) ### True
+print(10 == 20) ### False
+
+Pythonでは大文字と小文字は=ではない
+(例)
+print("A" == "A") ### True
+print("A" == "a") ### False
+※文字列の比較はPythonではできるが、ほかの言語だとできない可能性がある。
+
+!=→左右の値が等しくないですか？と聞く
+(例)
+a = 3; b = 3; c = 5
+print(a != b) ### False
+print(a != c) ### True
+
+〇 > △→〇が△より大きい
+(例)
+a = 3; b = 3; c = 5
+print(a > b) ### False
+print(c > a) ### True
+
+〇 >= △→〇が△以上
+(例)
+a = 3; b = 3; c = 5
+print(a >= b) ### True
+
+〇 < △→〇が△より小さい
+(例)
+a = 3; b = 3; c = 5
+print(a < b) ### False
+print(a < c) ### True
+
+〇 <= △→〇が△以下
+(例)
+a = 3; b = 3; c = 5
+print(a <= b) ### True
+
+TrueとFalseを代入するとき""で囲まないこと→文字列になってしまう
+(例)
+t = True
+f = False
+print(t == f) ### False
+
+and→〇〇かつ△△
+両方満たしていてTrue→論理積
+(例)
+print(True and True) ### True
+print(True and False) ### False
+print(False and False) ### False
+a = 80
+print(a > 50 and a < 100) ### True
+b = 40
+print(b > 50 and b < 100) ### False
+
+andを使わずに書く表現方法もある
+(例)
+a = 80
+b = 40
+print(50 < a < 100) ### True
+print(50 < b < 100) ### False
+
+or→〇〇または△
+片方どちらかを満たしていればTrue→論理和
+(例)
+print(True or True) ### True
+print(True or False) ### True
+print(False or False) ### False
+a = 80
+print(a > 50 or a < 100) ### True
+b = 40
+print(b > 50 or b < 100) ### True
+
+andやorを数値で記述すると数値で返ってくる
+(例)
+print(1 and 1) ### 1
+print(1 and 0) ### 0
+print(0 and 0) ### 0
+print(1 or 1) ### 1
+print(1 or 0) ### 1
+
+not→否定
+True/Falseを逆で返す
+(例)
+print(not True) ### False
+print(not False) ### True
+
+&(AND)→論理積
+(例)
+print(bin(0b10010010 & 0b10100111)) ### 0b10000010
+
+|(OR)→論理和
+(例)
+print(bin(0b10010010 | 0b10100111)) ### 0b10110111
+
+^(XOR)→排他的論理和→一致したら0
+(例)
+print(bin(0b10010010 ^ 0b10100111)) ### 0b00110101
+
+~→反転→1と0を逆にする
+(例)
+print(bin(~0b10010010)) ### -0b10010011
+print(0b10010010) ### 146→0から146までの範囲
+print(~0b10010010) ### -147→反転させて-1から-147の範囲
+2進数の時は+1することを忘れないようにする→0ぶんを足す
+
+bit演算は横並びにして計算する
+
+<<→左シフト→左に一つずらす+一番右に0が増える=2倍になる
+
+>>→右シフト→右に1つずらす=1/2になる
+(例)
+a = 0b001011
+print(a) ### 11
+
+print(bin(a << 1)) ### 0b10110
+print(a << 1) ### 22
+
+b = a << 1
+print(b) ### 22
+print(bin(b)) ### 0b10110
+
+print(b >> 1) ### 11
+print(bin(b >> 1)) ### 0b1011
+
+ビットマスク
+どこを取り出すか考える
+↓
+取り出したい値を下位にずらす必要があれば右シフトでずらす
+↓
+取り出したい桁を1にして論理積を求める
+↓
+一部のビットだけを取り出すことができる

@@ -1,0 +1,14 @@
+# RTX830 1号機 コンフィグ
+# RTX830_1_20251024_02.conf
+
+no dhcp service server
+no dhcp server rfc2131 compliant except remain-silent
+
+save
+
+# 設定確認(no付けた行が消えていることを確認)
+show config
+
+# LAN2設定 スプシに書いてる値
+ip LAN2 address 10.0.12.201/24
+save

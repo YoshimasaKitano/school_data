@@ -1,0 +1,46 @@
+/* 20250826 */
+-- 副問い合わせ
+-- order_no='000001'のcustomer_nameが知りたい
+-- 1: order_no='000001'のcustomer_code調べる
+-- 2: 調べたcustomer_codeからcustomer_nameを調べる
+
+select
+  customer_code
+from orders
+where order_no='000001'
+;
++---------------+
+| customer_code |
++---------------+
+| RA0001        |
++---------------+
+
+select customer_name
+from customer
+where customer_code='RA0001'
+;
++---------------+
+| customer_name |
++---------------+
+| A店社         |
++---------------+
+
+-- 副問い合わせ（サブクエリ）
+select customer_name
+from customer
+where customer_code=(
+  select
+    customer_code
+  from orders
+  where order_no='000001'
+)
+;
++---------------+
+| customer_name |
++---------------+
+| A店社         |
++---------------+
+
+
+
+

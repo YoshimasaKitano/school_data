@@ -1,0 +1,84 @@
+/* 20250826 */
+-- 副問い合わせ
+-- order_no='000001'のcustomer_nameが知りたい
+-- 1: order_no='000001'のcustomer_codeを調べる
+-- 2: 調べたcustomer_codeからcustomer_nameを調べる
+
+select
+	customer_code
+from orders
+where order_no = '000001'
+;
++---------------+
+| customer_code |
++---------------+
+| RA0001        |
++---------------+
+
+select customer_name
+from customer
+where customer_code = 'RA0001'
+;
++---------------+
+| customer_name |
++---------------+
+| A店社         |
++---------------+
+
+-- 副問い合わせ(サブクエリ)
+select customer_name
+from customer
+where customer_code = (
+select
+	customer_code
+from orders
+where order_no = '000001'
+)
+;
++---------------+
+| customer_name |
++---------------+
+| A店社         |
++---------------+
+
+3-11
+select item_code, item_name, price, stock
+from item
+where item_code in (
+select item_code
+from order_details
+where order_no = '000008'
+)
+order by item_code
+;
++-----------+------------------------------------------------+-------+-------+
+| item_code | item_name                                      | price | stock |
++-----------+------------------------------------------------+-------+-------+
+| FR0001    | マルチビタミン&ミネラル・10日分                |  1200 | 99990 |
+| GR0001    | 健康十穀の粥・1食                              |   120 | 99990 |
+| GR0004    | 健康十穀の粥・90食パック                       |  8000 | 99990 |
+| GR0005    | 健康十穀の粥(カレー)・1食                      |   120 | 99990 |
+| GR0008    | 健康十穀の粥(カレー)・90食パック               |  8000 | 99990 |
++-----------+------------------------------------------------+-------+-------+
+
+3-12
+select item_code, item_name, price, stock
+from item
+where item_code in (
+select item_code
+from order_details
+where order_no in (
+select order_no
+from orders
+where order_date between '2016-12-01' and '2016-12-31'
+)
+)
+order by item_code
+;
++-----------+----------------------------------------+-------+-------+
+| item_code | item_name                              | price | stock |
++-----------+----------------------------------------+-------+-------+
+| AR0001    | ミネラルウォーター（500ml）            |    80 | 99975 |
+| BR0001    | 黄金にんにく・10日分                   |  1200 | 99970 |
+| CR0001    | 食べる納豆キナーゼ・10日分             |   600 | 99980 |
++-----------+----------------------------------------+-------+-------+

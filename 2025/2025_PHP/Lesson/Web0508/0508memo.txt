@@ -1,0 +1,32 @@
+CSSの書く順番
+display,justify-content,list-style→width→margin,padding→color→テキスト、フォントなど→アニメーション
+→視覚順
+
+<nav></nav>→ナビゲーションを表す
+
+C:/Users/cre/Desktop/HTMLCSSボタン/index.html→ディレクトリ
+
+reset.cssのほうがstyle.cssより早く読み込みたいので<link>を上に書く
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+
+flexしたものの中央揃えはjutify-content
+none→なん　とよむ
+
+;→セミコロン
+
+:→コロン
+
+〇〇:hover→〇〇をホバー(マウスカーソルをその構造物にもっていくこと)した時の。
+
+ブロック要素→要素のブラウザの横いっぱいの幅を持つ。
+インライン要素→要素そのものの幅しか持たない。
+
+<a><span>はインライン要素
+<div>はブロック要素→改行されてしまう。
+
+display: block;→インライン要素をブロック要素に変える
+→<a>だけどブロック要素に変えたいときなどに使う。
+
+transition:→時間をかけて
+1s→1秒

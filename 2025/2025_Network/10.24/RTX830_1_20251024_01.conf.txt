@@ -1,0 +1,11 @@
+# RTX830 0号機 コンフィグ
+# 2025/10/24
+
+telnetd host lan
+dhcp service server
+dhcp server rfc2131 compliant except remain-silent
+dhcp scope 1 192.168.201.10-192.168.201.99/24
+save
+ip lan1 address 192.168.201.254/24
+
+save

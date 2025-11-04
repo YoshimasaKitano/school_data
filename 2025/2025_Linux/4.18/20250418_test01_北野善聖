@@ -1,0 +1,6 @@
+daetette
+Fri Apr 18 10:29:33 JST 2025
+[user01@linux ~]$ dir /ls /
+afs  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[user01@linux ~]$ exit
+logout

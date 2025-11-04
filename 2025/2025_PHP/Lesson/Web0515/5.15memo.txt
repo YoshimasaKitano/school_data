@@ -1,0 +1,14 @@
+box-sizing: border-box;→boxのサイズにborderを含める
+→reset.cssに書く
+
+ボーダーをリストの内側にだけ入れたい
+→隣接セレクタを使う
+nav ul li+li{
+    border-left: solid 1px #ffffff;
+}
+liの次のliに対して左側にボーダーを引きますというもの
+
+reset.css→style.css→Javascript
+
+Ctlr+ブラウザのリロード→スーパーリロード
+キャッシュクリアをしてくれる

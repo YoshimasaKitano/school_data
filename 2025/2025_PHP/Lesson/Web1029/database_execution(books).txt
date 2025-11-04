@@ -1,0 +1,38 @@
+■booksテーブルの全レコードを取得する
+SELECT * FROM books;
+
+■titleカラム値とpriceカラム値のみを取得する
+SELECT title, price FROM books;
+
+■publisherが料理評論社のレコードのみを検索する
+SELECT * FROM books WHERE publisher = '料理評論社';
+
+■priceが1000以下のレコードのみを検索する
+SELECT * FROM books WHERE price <= 1000;
+
+■publishedが2018/03/01から2018/03/31の期間内にあるレコードのみを検索する
+SELECT * FROM books WHERE published BETWEEN '2018-03-01' AND '2018-03-31';
+
+■titleに「料理」を含むレコードのみを検索する
+SELECT * FROM books WHERE title LIKE '%料理%';
+
+■titleが「100%」ではじめるレコードのみを検索する
+SELECT * FROM books WHERE title LIKE '100#%%' ESCAPE '#'
+
+■publisherが「料理評論社」「南国出版」「こども出版社」のいずれかのレコードを検索する
+SELECT * FROM books WHERE publisher IN ('料理編集者', '南国出版', 'こども出版社');
+
+■priceがNULLのレコードのみを検索する
+SELECT * FROM books WHERE price IS NULL;
+
+■titleに「料理」を含み、かつ、publishedが2018-01-01以降のレコードを検索
+SELECT * FROM books WHERE title LIKE '%料理%' AND published >= '2018-01-01';
+
+■titleに「料理」または「喫茶」を含むレコードを検索
+SELECT * FROM books WHERE title LIKE '%料理%' OR title LIKE '%喫茶%';
+
+■「titleに料理を含む」または「titleに喫茶を含み、publisherが料理評論社である」または「publisherがクラシックアカデミー社である」レコードを検索
+SELECT * FROM books WHERE title LIKE '%料理%' OR title LIKE '%喫茶%' AND publisher = '料理評論社' OR publisher = 'クラシックアカデミー社';
+
+■「titleに料理または喫茶を含む」かつ「publisherが料理評論社またはクラシックアカデミー社である」レコードを検索
+SELECT * FROM books WHERE (title LIKE '%料理%' OR title LIKE '%喫茶%') AND (publisher = '料理評論社' OR publisher = 'クラシックアカデミー社')

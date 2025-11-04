@@ -1,0 +1,170 @@
+// 202050729
+
+-- データベースの作成 create文 DDL
+create database sample_db;
+
+-- データベースの確認 DDL
+show databases;
+
+
+-- データべースの選択
+use sample_db;
+
+
+-- テーブルの確認
+show tables;
+
+
+-- テーブルの作成 create文 DDL
+
+create table product(
+id char(5) not null primary key,
+name varchar(100) not null,
+height int not null default 0,
+width int not null default 0,
+weight int not null default 0,
+price int not null check(price>=0)
+);
+
+
+-- テーブルの構造確認
+show columns from product;
+
+
+-- データを挿入する insert文 DML
+insert into product(id, name, height, width,weight,price)
+values('s0001', '机A', 800, 800, 10, 12000);
+
+
+-- テーブルのデータを検索する select文 DML
+select * from product;
++-------+------+--------+-------+--------+-------+
+| id    | name | height | width | weight | price |
++-------+------+--------+-------+--------+-------+
+| s0001 | 机A  |    800 |   800 |     10 | 12000 |
++-------+------+--------+-------+--------+-------+
+
+-- 練習
+insert into product(id, name, height, width,weight,price)
+values('s0002', '机B', 800, 1000, 15, 15000);
+
+select * from product;
++-------+------+--------+-------+--------+-------+
+| id    | name | height | width | weight | price |
++-------+------+--------+-------+--------+-------+
+| s0001 | 机A  |    800 |   800 |     10 | 12000 |
+| s0002 | 机B  |    800 |  1000 |     15 | 15000 |
++-------+------+--------+-------+--------+-------+
+
+
+-- 複数行のデータを挿入
+insert into product(id, name, height, width,weight,price)
+values
+('s0003', '椅子A', 600, 450, 5, 6000),
+('s0004', '椅子B', 600, 450, 5, 0);
+
+select * from product;
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0001 | 机A   |    800 |   800 |     10 | 12000 |
+| s0002 | 机B   |    800 |  1000 |     15 | 15000 |
+| s0003 | 椅子A |    600 |   450 |      5 |  6000 |
+| s0004 | 椅子B |    600 |   450 |      5 |     0 |
++-------+-------+--------+-------+--------+-------+
+
+
+-- 選択列リストに列名を指定してデータを検索
+select id, name, price from product;
++-------+-------+-------+
+| id    | name  | price |
++-------+-------+-------+
+| s0001 | 机A   | 12000 |
+| s0002 | 机B   | 15000 |
+| s0003 | 椅子A |  6000 |
+| s0004 | 椅子B |     0 |
++-------+-------+-------+
+
+
+-- 行を絞り込んでデータを検索する
+select * from product where id = 's0004';
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0004 | 椅子B |    600 |   450 |      5 |     0 |
++-------+-------+--------+-------+--------+-------+
+
+
+-- データの更新 update文 DML
+update product set price=7000 where id = 's0004';
+
+select * from product where id = 's0004';
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0004 | 椅子B |    600 |   450 |      5 |  7000 |
++-------+-------+--------+-------+--------+-------+
+
+-- 実験
+update product set weight = 100;
+
+select * from product;
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0001 | 机A   |    800 |   800 |    100 | 12000 |
+| s0002 | 机B   |    800 |  1000 |    100 | 15000 |
+| s0003 | 椅子A |    600 |   450 |    100 |  6000 |
+| s0004 | 椅子B |    600 |   450 |    100 |  7000 |
++-------+-------+--------+-------+--------+-------+
+
+-- 複数データを更新
+update product set price = 5000, weight = 5 where id = 's0004';
+
+select * from product where id = 's0004';
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0004 | 椅子B |    600 |   450 |      5 |  5000 |
++-------+-------+--------+-------+--------+-------+
+
+
+-- 1行のデータの削除 delete文 DML
+delete from product where id = 's0004';
+
+select * from product;
++-------+-------+--------+-------+--------+-------+
+| id    | name  | height | width | weight | price |
++-------+-------+--------+-------+--------+-------+
+| s0001 | 机A   |    800 |   800 |    100 | 12000 |
+| s0002 | 机B   |    800 |  1000 |    100 | 15000 |
+| s0003 | 椅子A |    600 |   450 |    100 |  6000 |
++-------+-------+--------+-------+--------+-------+
+
+-- すべてのデータを削除
+delete from product;
+
+select * from product;
+Empty set (0.00 sec)
+
+-- テーブルの破棄 drop文 DDL
+drop table product;
+
+show tables;
+Empty set (0.01 sec)
+
+
+-- データベースの破棄 DDL
+drop database sample_db;
+
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+

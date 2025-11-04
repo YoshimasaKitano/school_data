@@ -1,0 +1,9 @@
+■ORDER BY句の動きを実験
+SELECT * FROM collate_tests ORDER BY value1;
+SELECT * FROM collate_tests ORDER BY value2;
+SELECT * FROM collate_tests ORDER BY value3;
+
+■WHERE句での完全一致検索を実験
+SELECT * FROM collate_tests WHERE value1 = 'abc'; -- SQL(1)
+SELECT * FROM collate_tests WHERE value2 = 'abc'; -- SQL(2)
+SELECT * FROM collate_tests WHERE value3 = 'abc'; -- SQL(3)

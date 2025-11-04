@@ -1,0 +1,45 @@
+■booksテーブルの全レコード数を取得する
+SELECT COUNT(*) books_count FROM books;
+
+■booksテーブルのpublishedが2018年以降のレコード数を取得する
+SELECT COUNT(*) books_count FROM books WHERE published >= '2018-01-01';
+
+■priceの平均、合計、最小、最大を求める
+SELECT AVG(price) avg_price, SUM(price) sum_price, MIN(price) min_price, MAX(price) max_price FROM books;
+
+■一覧なpublisherカラム値を求める
+SELECT DISTINCT(publisher) FROM books;
+
+■publisher(出版社)ごとに、レコード数ともっとも最近の出版日を調べる
+SELECT publisher, COUNT(*) total, MAX(published) latest_published FROM books GROUP BY publisher;
+
+■priceの昇順にソートする
+SELECT * FROM books ORDER BY price ASC;
+
+■publishedの降順にソートした結果の上から3件のみを取得
+SELECT * FROM books ORDER BY published DESC LIMIT 3;
+
+■priceの降順にソートした結果のレコード位置4から2件分表示する
+SELECT * FROM books ORDER BY price DESC LIMIT 2 OFFSET 4;
+
+■ページネーションのためのSQL
+-- 1ページ目(1レコード目～3レコード目)
+SELECT * FROM books ORDER BY published DESC LIMIT 3 OFFSET 0;
+
+-- 2ページ目(4レコード目～6レコード目)
+SELECT * FROM books ORDER BY published DESC LIMIT 3 OFFSET 3;
+
+-- 3ページ目(7レコード目～9レコード目)
+SELECT * FROM books ORDER BY published DESC LIMIT 3 OFFSET 6;
+
+■idが3のレコードのtitleとpriceを更新する
+UPDATE books SET title = 'あそぼう！micro:bit', price = 1245 WHERE id = 3;
+
+■created,title,priceカラムを指定したレコード作成
+INSERT INTO books (created, title, price) VALUES (CURRENT_TIMESTAMP, 'テナーのサックスの基本', 1400);
+
+■全カラムを指定したレコード作成
+INSERT INTO books (created, title, publisher, published, price) VALUES (CURRENT_TIMESTAMP, 'ソプラノリコーダーの基本', NULL, NULL, 1030);
+
+■publishedが2017年以前のレコードを削除する
+DELETE FROM books WHERE published <= '2017-12-31';

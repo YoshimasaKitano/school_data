@@ -1,0 +1,70 @@
+MySQL→操作するだけでなくデータを入れておく箱もある
+
+SQLite
+
+DBMS→DBを操作する
+
+DB→データベース。データを入れておく箱のこと。
+
+データベースはテーブルの形で管理される
+
+テーブルが表形式で構成される→リレーショナルデータベース
+
+IDを紐づけてデータを管理していく→データの容量が少ない
+
+テーブル→リレーショナルデータベースにおいてデータを管理する基本単位
+
+mysql -u root -p→mysql.exeがあるディレクトリまでcdで降りてきてから実行
+→-uはuserの略
+→-pはパスワードの略
+
+パスワード→Pa$$w0rd
+
+命令文の後ろには必ずセミコロンをうつこと
+
+Field→列名
+
+Type→ファイル・データの型→ここに表示されている型しか入らない
+
+null→nullの状態にするなという状況をしめす
+
+key→PRI→重なった状態にしないでという状況
+
+from～→～からとってくる
+
+選択列リスト
+
+select △, □ from 〇〇
+→△や□にしぼって〇〇から選択する
+
+MySQLは大文字小文字の区別をしない
+
+char型→固定長の文字列データを格納することができる
+varchar型→可変長の文字列データを格納することができる
+
+int型→整数値データを格納することができる
+
+create datebase 〇〇;→〇〇という名前のデータベースを作成する
+
+show datebases;→データベースの確認
+
+use 〇〇;→データベースの選択
+
+show tables;→テーブルの確認
+
+テーブルの作成
+(例)
+create table 〇〇(
+id char(5) not null primary key,
+name varchar(100) not null,
+height int not null default 0,
+width int not null default 0,
+weight int not null default 0,
+price int not null check(price>=0)
+);
+
+create table 〇〇(
+列名 型 nullどうするか keyがprimaryかdefaultか
+);
+
+show columns from 〇〇;またはdesk 〇〇;→〇〇というテーブル名の中身を見れる

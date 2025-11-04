@@ -1,0 +1,7 @@
+### pythonのデータベースを操作する
+
+## pythonにインストールされているライブラリの確認
+> python -m pip list
+
+## MySQLを接続・操作するライブラリをインストールする
+>python -m pip install mysqlclient
