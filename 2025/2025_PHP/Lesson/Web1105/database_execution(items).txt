@@ -1,0 +1,4 @@
+CREATE TABLE items(
+    `price` INTEGER,
+    `tax_type` TINYINT DEFAULT 1
+);

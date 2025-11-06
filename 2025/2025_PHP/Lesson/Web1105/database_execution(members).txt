@@ -1,0 +1,5 @@
+CREATE TABLE members(
+    `id` SERIAL PRIMARY KEY,
+    `emp_num` INTEGER UNIQUE,
+    `name` VARCHAR(255)
+);
