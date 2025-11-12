@@ -23,7 +23,7 @@ def load_data():
                 data = json.load(fileobj) # JSON形式で読み込んで辞書型にする
                 return data
         except:
-            print("※ データフィルが破損、新しいファイルを作成します。")
+            print("※ データファイルが破損、新しいファイルを作成します。")
 
     return {}
 
