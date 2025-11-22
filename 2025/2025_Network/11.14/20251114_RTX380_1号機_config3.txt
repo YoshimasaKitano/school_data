@@ -1,0 +1,27 @@
+#15 2 28 0
+ip route default gateway 10.0.0.254
+ip route 192.168.200.0/24 gateway 10.0.0.200
+ip route 192.168.202.0/24 gateway 10.0.0.202
+ip route 192.168.203.0/24 gateway 10.0.0.203
+ip route 192.168.204.0/24 gateway 10.0.0.204
+ip route 192.168.206.0/24 gateway 10.0.0.206
+ip route 192.168.207.0/24 gateway 10.0.0.207
+ip route 192.168.208.0/24 gateway 10.0.0.208
+ip keepalive 1 icmp-echo 10 5 10.0.0.254
+ip lan1 address 192.168.201.254/24
+switch control use lan1 on terminal=on
+ip lan2 address 10.0.0.201/24
+ip lan2 nat descriptor 200
+switch control use lan2 on terminal=on
+pp disable all
+no tunnel enable all
+telnetd host lan
+dhcp service server
+dhcp server rfc2131 compliant except remain-silent
+dhcp scope 1 192.168.201.10-192.168.201.99/24
+dns host lan1
+dns server 8.8.8.8 1.1.1.1
+dns server select 500201 8.8.8.8 1.1.1.1 any .
+dns private address spoof on
+httpd host lan1
+statistics traffic on
