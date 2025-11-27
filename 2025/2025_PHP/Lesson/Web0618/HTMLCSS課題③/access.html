@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCAサファリパーク in OSAKA</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo50.png">
+    <script src="https://kit.fontawesome.com/6643e64c88.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="title">
+            <ul>
+                <li><a href="index.html"><img src="images/logo50.png" alt="白黒のライオンのロゴ"></a></li>
+                <li><a href="index.html"><h1>OCAサファリパーク<span class="small"> in OSAKA</span></h1></a></li>
+            </ul>
+        </nav>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="animal.html">動物たち</a></li>
+                <li><a href="form_lesson.php">ご来場者プレゼント</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>アクセス</h2>
+        <div class="accessmain">
+            <ul class="access">
+                <li class="accesspage"><div class="access-icon"><img src="images/logo100.png" alt="白黒のライオンのロゴ"></div>
+                <h3>OCAサファリパーク<span class="smallaccess"> in OSAKA</span></h3>
+                <p>住所：〒550-0014 大阪府大阪市西区北堀江２丁目４－６<br>TEL：0120-000-000<br>営業時間：10:00～19:00<br>入場料：大人1,900円　高校生以下：1,000円</p></li>
+                <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.276322774497!2d135.490041676134!3d34.67297488469931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e706b022565b%3A0x835e57e6940bda0f!2zT0NB5aSn6Ziq44OH44K244Kk44OzJuODhuOCr-ODjuODreOCuOODvOWwgumWgOWtpuagoQ!5e0!3m2!1sja!2sjp!4v1747821902459!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <img src="images/footerAnimal500.png" alt="たくさんの動物のシルエット">
+        <p id="page-top" style="display: flex;"><a href=""><img src="images/lion300.png" alt="白黒の横向きのライオンのロゴ" class="topbtn"></a></p>
+        <ul>
+            <li><a href="https://x.com/fuji_safari1980" target="_block"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/fujisafari/?locale=ja_JP" target="_block"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+            <li><a href="https://www.instagram.com/fuji_safari/" target="_block"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+        </ul>
+        <p class="copy">&copy; 2025 OCAサファリパーク in OSAKA</p>
+    </footer>
+    <script>
+        // スムーススクロール
+            $(function(){
+                $('a[href^=#]').click(function() {
+                    var speed = 800; // scroll(ミリ秒)
+                    var href = $(this).attr("href");
+                    var target = $(href == "#" || href == "" ? 'html' : href);
+                    var position = target.offset().top;
+                    $('html').animate({scrollTop:position}, speed, 'swing');
+                    return false;
+                });
+            });
+            
+            // Topへ戻るボタン
+            $(function(){
+                var topBtn = $('#page-top');
+                //hideでボタン非表示
+                topBtn.hide();
+                //スクロールが1000pxに達したらボタン表示
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 50){
+                        topBtn.fadeIn();//もし～であれば表示
+                    }else{
+                        topBtn.fadeOut();//elseそうでなければ非表示
+                    }
+                });
+                //スクロールしてトップへ戻る
+                topBtn.click(function(){
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });
+        </script>
+</body>
+</html>
