@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員管理|編集確認</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>編集確認</h1>
+
+    <form action="edit_confirm" method="post">
+        <p>従業員番号: <input type="hidden" name="no" value="{{no}}">{{no}}</p>
+        <p>従業員名: <input type="hidden" name="name" value="{{name}}">{{name}}</p>
+        <p>パスワード: <input type="hidden" name="password" value="{{password}}">{{password}}</p>
+        <p><input type="submit" value="更新"></p>
+    </form>
+    <p><a href="/edit">戻る</a></p>
+</body>
+</html>

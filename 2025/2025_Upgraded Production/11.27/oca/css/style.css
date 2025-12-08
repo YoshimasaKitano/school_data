@@ -4,7 +4,7 @@ header {
     position: fixed;
     width: 100%;
     padding: 14px 0;
-    background-color: #000000;
+    background-color: #04265e;
 }
 
 header .school_header {
@@ -50,6 +50,11 @@ header ul .materials {
 
 .link {
     color: #ffffff;
+    text-decoration: none;
+}
+
+.link_black {
+    color: #000000;
     text-decoration: none;
 }
 

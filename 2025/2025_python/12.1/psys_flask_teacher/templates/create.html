@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員管理|新規登録</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>新規登録</h1>
+    <form action="/create" method="post">
+        <p>従業員番号: <input type="text" name="no" required></p>
+        <p>従業員名: <input type="text" name="name" required></p>
+        <p>パスワード: <input type="text" name="password" required></p>
+        <p><input type="submit" value="送信"></p>
+    </form>
+    <p><a href="/">戻る</a></p>
+</body>
+</html>

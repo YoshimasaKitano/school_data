@@ -1,0 +1,22 @@
+# 手順
+1. Flaskのインストール
+> pip install Flaskのインストール
+
+2. mysqlclientのインストール
+> pip install mysqlclient
+
+3. ディレクトリ構成に従って各ファイルとフォルダを用意する
+psys_flask/
+├── app.py                 # Flaskアプリ本体
+├── config.py              # DB接続設定（DB_CONFIG）
+├── templates/             # HTMLテンプレート
+│   ├── index.html         # 一覧画面
+│   ├── create.html        # 新規登録画面
+│   ├── create_confirm.html# 登録確認画面
+│   ├── edit.html          # 編集画面
+│   ├── edit_confirm.html  # 編集確認画面
+│   ├── delete_confirm.html# 削除確認画面
+├── static/
+│   ├── css/style.css      # スタイルシート
+│   └── js/                # JavaScript（未使用）
+└── note.txt               # 補足メモ

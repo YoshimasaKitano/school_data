@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員管理|検索結果</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>検索結果</h1>
+
+    <!-- 名前のあいまい検索処理 -->
+    <form action="/search" method="post">
+        <p>
+            <input type="text" name="word">
+            <input type="submit" value="検索">
+        </p>
+    </form>
+
+    {% if not emps %}
+        <p>見つかりませんでした。</p>
+    
+    {% else %}
+        <table>
+            <tr>
+                <th>従業員番号</th>
+                <th>従業員名</th>
+                <th>パスワード</th>
+            </tr>
+            {% for emp in emps %}
+            <tr>
+                <td>{{emp[0]}}</td>
+                <td>{{emp[1]}}</td>
+                <td>{{emp[2]}}</td>
+            </tr>
+            {% endfor %}
+        </table> 
+
+    {% endif %}
+    <p><a href="/">戻る</a></p>
+</body>
+</html>

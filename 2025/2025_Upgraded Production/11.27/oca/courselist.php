@@ -56,8 +56,8 @@
         </ul>
         <h2>専攻</h2>
         <ul>
-            <li>ホワイトハッカー専攻</li>
-            <li>AIエンジニア専攻</li>
+            <li><a href="whitehacker.php" class="link_black">ホワイトハッカー専攻</a></li>
+            <li><a href="AIengineer.php" class="link_black">AIエンジニア専攻</a></li>
             <li>スーパーITエンジニア専攻</li>
             <li>ロボット・AIクリエイター専攻</li>
             <li>ITスタートアップ専攻</li>

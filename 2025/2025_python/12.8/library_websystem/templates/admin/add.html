@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の追加画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>本の追加</h1>
+    <form action="/add" method="post">
+        <p>本のタイトル：<input type="text" name="title" required></p>
+        <p>著者名：<input type="text" name="author" required></p>
+        <p><input type="submit" value="送信"></p>
+    </form>
+    <p><a href="/admin_menu"></a></p>
+</body>
+</html>
