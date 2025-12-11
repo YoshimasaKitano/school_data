@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の貸出画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 1 %}
+        <p>本を3冊借りているので借りられません。</p>
+    {% else %}
+        <h1>本の貸出</h1>
+        <form action="/borrow" method="post">
+            <p>本のタイトル：<input type="text" name="title" required></p>
+            <p><input type="submit" value="送信"></p>
+        </form>
+    <p><a href="/user_menu">戻る</a></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の貸出確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 0 %}
+        <h1>貸出確認</h1>
+        <form action="/borrow_confirm" method="post">
+            <p>本のタイトル: <input type="hidden" name="title" value="{{title}}">{{title}}</p>
+            <p><input type="submit" value="貸出"></p>
+        </form>
+    
+    {% else %}
+        <p>その本は存在しません。</p>
+    {% endif %}
+    <p><a href="/borrow">戻る</a></p>
+</body>
+</html>

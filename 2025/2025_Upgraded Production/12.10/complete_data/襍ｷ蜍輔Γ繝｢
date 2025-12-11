@@ -1,0 +1,12 @@
+--データベース作成
+CREATE DATABASE oca CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+--アドミンユーザーに昇格(初回のみ必要)
+UPDATE users SET role = 'admin' WHERE username = 'ume';
+
+--AI
+pip install google-generativeai
+
+--
+ログイン 150%
+アプリ 125%

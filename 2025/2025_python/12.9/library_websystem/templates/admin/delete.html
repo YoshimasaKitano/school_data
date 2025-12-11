@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の削除画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>本の削除</h1>
+    <form action="/delete" method="post">
+        <p>本のタイトル：<input type="text" name="title" required></p>
+        <p><input type="submit" value="送信"></p>
+    </form>
+    <p><a href="/admin_menu">戻る</a></p>
+</body>
+</html>

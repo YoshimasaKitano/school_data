@@ -40,7 +40,7 @@ def add():
     
     # GET送信されてきた場合
     return render_template('admin/add.html')
-
+    
 # 本の追加の確認処理
 @app.route('/add_confirm', methods=['POST'])
 def add_confirm():
@@ -63,6 +63,29 @@ def add_confirm():
             print("エラー内容",e)
 
             # return redirect('/')
+
+        finally:
+            conn.close()
+            print("DB接続終了")
+
+# 本の検索の入力処理
+@app.route('/search', methods=['POST'])
+def search():
+        
+        keyword = request.form['keyword']
+
+        try:
+            conn = get_db_connection()
+            print("DB接続成功")
+            cursor = conn.cursor()
+            sql = "select (title, author, available) from books where title like %s;"
+            cursor.execute(sql, ("%" + keyword + "%", ))
+            emps = cursor.fetchall()
+            return render_template('admin/search_result.html', emps = emps)
+
+        except Exception as e:
+            print("DB接続失敗")
+            print("エラー内容",e)
 
         finally:
             conn.close()
