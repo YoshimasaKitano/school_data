@@ -1,0 +1,35 @@
+10/29　進捗確認メモの作成　by Atsuki
+進捗確認メモ「status_check.txt」を作成
+またノートPCの環境構築も終わり、本格的にGithubを使い、制作課題に取り組めるように調整
+その他は本日から作成していく予定
+
+11/13  データベースへの格納に成功　by Atsuki
+
+11/13 10:56 データベースのsubcategoryを〇〇専攻に統一 by Kitano
+
+11/13  スクレイピングでヘッダー,フッターを取らないようにする by Atsuki
+やらないといけないこと
+Atsuki
+・nullで入っているカテゴリーをどのように分けることができるかを考える
+
+11/13 12:11
+delete_about_not_is_null()
+subcategoryのうち、null以外のものを削除する関数。
+
+delete_about_null()
+subcategoryのうち、nullのものを削除する関数。
+
+update_and_delete_about_major()
+subcategoryのうち、nullのものを削除し、〇〇専攻という形に整える関数。
+
+上3つを定義 by Kitano
+
+11/13 23:26
+category_update()
+categoryに専攻情報を含むが、subcategoryがNULLのデータのcategoryを学校概要に変更する関数。
+
+上1つを定義
+
+category_update()を使用して作ったデータベースがoca_category_update.db
+by Kitano
+
