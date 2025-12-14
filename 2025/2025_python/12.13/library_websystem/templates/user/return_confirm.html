@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の返却確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 1 %}
+        <h1>返却確認</h1>
+        <form action="/return_confirm" method="post">
+            <p>本のタイトル: <input type="hidden" name="title" value="{{title}}">{{title}}</p>
+            <p><input type="submit" value="返却"></p>
+        </form>
+    {% else %}
+        <p>その本は借りていません。</p>
+    {% endif %}
+    <p><a href="/return">戻る</a></p>
+</body>
+</html>

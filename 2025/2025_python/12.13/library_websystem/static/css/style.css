@@ -1,0 +1,32 @@
+@charset "utf-8";
+* {
+   margin: 0%;
+   padding: 0%;
+}
+
+h1 {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.top_ul {
+    display: flex;
+    justify-content: center;
+}
+
+.top_ul li {
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    list-style: none;
+}
+
+.admin_ul {
+    display: flex;
+    justify-content: center;
+}
+
+.admin_ul li {
+    list-style: none;
+}

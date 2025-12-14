@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図書館管理システム</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>図書館管理システム</h1>
+    <ul class="top_ul">
+        <li>
+            <a href="/admin_menu" class="catchcopy">
+                <h2>管理者モード</h2>
+                <p>本の追加、検索、削除、更新</p>
+                <p>管理者画面へ</p>
+            </a>
+        </li>
+        <li>
+            <a href="/user" class="catchcopy">
+                <h2>ユーザーモード</h2>
+                <p>本の貸出、返却、履歴確認</p>
+                <p>ユーザー画面へ</p>
+            </a>
+        </li>  
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+* {
+   margin: 0%;
+   padding: 0%;
+}
+
+h1 {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.top_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.top_ul li {
+    display: block;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid #00d5ff;
+    border-radius: 10px;
+}
+
+.catchcopy {
+    display: block;
+    text-decoration: none;
+}
+
+.top_ul li h2 {
+    text-align: center;
+}
+
+.top_ul li p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.admin_ul li {
+    text-align: center;
+}
