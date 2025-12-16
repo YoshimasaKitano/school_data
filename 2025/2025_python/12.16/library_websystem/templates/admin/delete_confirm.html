@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の削除確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="{{url_for('static', filename='js/style.js') }}"></script>
+</head>
+<body>
+    {% if count == 0 %}
+        <p class="eroor_message">その本は存在しません。</p>
+    {% elif count == 1 %}
+        <h1>削除確認</h1>
+        <form action="/delete_confirm" method="post" class="input_submit">
+            <div class="input_confirm_many">
+                <p>本のタイトル：{{title}}</p>
+                <input type="hidden" name="title" value="{{title}}">
+            </div>
+            <p><input type="submit" value="削除"></p>
+        </form>
+    {% else %}
+        <p class="eroor_message">その本は貸し出し中です。削除できません。</p>
+    {% endif %}
+    <a class="reverse_page" href="/delete">戻る</a>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('.input_submit input[type="submit"]') 
+    btn.addEventListener('click', () => alert('削除しました。')); 
+</script>

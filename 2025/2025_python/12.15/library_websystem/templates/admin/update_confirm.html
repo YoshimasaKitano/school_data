@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の更新確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 1 %}
+        <h1>登録確認</h1>
+        <form action="/update_confirm" method="post">
+            <p>本のタイトル: <input type="hidden" name="title" value="{{title}}">{{title}}</p>
+            <p>新しい著者名: <input type="hidden" name="new_author" value="{{new_author}}">{{new_author}}</p>
+            <p><input type="submit" value="更新"></p>
+        </form>
+    
+    {% else %}
+        <p>その本は存在しません。</p>
+    {% endif %}
+    <a class="reverse_page" href="/update">戻る</a>
+</body>
+</html>

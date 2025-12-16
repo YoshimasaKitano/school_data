@@ -1,0 +1,194 @@
+@charset "utf-8";
+* {
+   margin: 0%;
+   padding: 0%;
+}
+
+h1 {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.top_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.top_ul li .catchcopy_a {
+    display: block;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid #00ff15;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.top_ul li .catchcopy_u {
+    display: block;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid #00d5ff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.top_ul li h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.top_ul li p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+.reverse_page {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 70% 50% 70% 60% / 40% 80% 60% 70%;
+    color: #000000;
+    background-color: #f1f109e3;
+    text-align: center;
+    text-decoration: none;
+    line-height: 70px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.admin_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.admin_ul li {
+    text-align: center;
+}
+
+.admin_ul li a {
+    display: block;
+    margin: 40px;
+    padding: 40px;
+    border: 2px solid #00ff15;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.admin_ul li a h2 {
+    color: #000000;
+}
+
+.user_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.user_ul li {
+    text-align: center;
+}
+
+.user_ul li a {
+    display: block;
+    margin: 40px;
+    padding: 40px;
+    border: 2px solid #00d5ff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.user_ul li a h2 {
+    color: #000000;
+}
+
+.input_box {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    display: block;
+    margin: 0 auto;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 36.8px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.input_box input[type="text"]{
+    border: none;
+    height: 32px;
+}
+
+.input_box input[type="text"]:focus {
+    outline: 0;
+}
+
+.input_box input[type="submit"]{
+    cursor: pointer;
+    font-size: 20.8px;
+    border: none;
+    background: none;
+    color: #3879D9;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: -10px;
+    outline : none;
+}
+
+.input_box_many {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    display: block;
+    margin: 20px auto;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.input_box_many p {
+    margin: 0 auto -5px;
+}
+
+.input_box_many input[type="text"] {
+    border: none;
+    width: 100%;
+}
+
+.input_box_many input[type="text"]:focus {
+    outline: 0;
+}
+
+.input_submit input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    font-size: 20.8px;
+    background: none;
+    color: #3879D9;
+}
+
+.input_confirm_many {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.input_confirm_many p {
+    margin: 0 auto -5px;
+}

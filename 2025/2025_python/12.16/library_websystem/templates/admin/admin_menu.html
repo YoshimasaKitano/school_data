@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>管理者モード</h1>
+    <ul class="admin_ul">
+        <li>
+            <a href="/add">
+                <h2>本の追加</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/search">
+                <h2>本の検索</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/delete">
+                <h2>本の削除</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/update">
+                <h2>本の更新</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/library">
+                <h2>本の一覧</h2>
+            </a>
+        </li>
+    </ul>
+    <a class="reverse_page" href="/">戻る</a>
+</body>
+</html>

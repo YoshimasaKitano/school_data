@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の追加確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 0 %}
+        <h1>登録確認</h1>
+        <form action="/add_confirm" method="post">
+            <p>本のタイトル: <input type="hidden" name="title" value="{{title}}">{{title}}</p>
+            <p>著者名: <input type="hidden" name="author" value="{{author}}">{{author}}</p>
+            <p><input type="submit" value="登録"></p>
+        </form>
+    {% else %}
+        <p>すでに登録されています。</p>
+    {% endif %}
+    <a class="reverse_page" href="/add">戻る</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の更新画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>本の更新</h1>
+    <form action="/update" method="post" class="input_submit">
+        <div class="input_box_many">
+            <p>本のタイトル</p>
+            <input type="text" name="title" required>
+        </div>
+        <div class="input_box_many">
+            <p>新しい著者名</p>
+            <input type="text" name="new_author" required>
+        </div>
+        <p><input type="submit" value="送信"></p>
+    </form>
+    <a class="reverse_page" href="/admin_menu">戻る</a>
+</body>
+</html>

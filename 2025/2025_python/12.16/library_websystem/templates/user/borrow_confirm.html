@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の貸出確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 1 %}
+        <h1>貸出確認</h1>
+        <form action="/borrow_confirm" method="post" class="input_submit">
+            <div class="input_confirm_many">
+                <p>本のタイトル：{{title}}</p>
+                <input type="hidden" name="title" value="{{title}}">
+            </div>
+            <p><input type="submit" value="貸出"></p>
+        </form>
+    {% elif count == 2 %}
+        <p class="eroor_message">貸出できません。</p>
+    {% else %}
+        <p class="eroor_message">見つかりません。</p>
+    {% endif %}
+    <a class="reverse_page" href="/borrow">戻る</a>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('.input_submit input[type="submit"]') 
+    btn.addEventListener('click', () => alert('貸出しました。')); 
+</script>

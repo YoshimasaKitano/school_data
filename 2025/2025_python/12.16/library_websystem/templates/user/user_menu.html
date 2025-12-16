@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1>ユーザーモード</h1>
+    <ul class="user_ul">
+        <li>
+            <a href="/borrow">
+                <h2>本の貸出</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/return">
+                <h2>本の返却</h2>
+            </a>
+        </li>
+        <li>
+            <a href="/history">
+                <h2>履歴確認</h2>
+            </a>
+        </li>
+    </ul>
+    <a class="reverse_page" href="/">戻る</a>
+</body>
+</html>

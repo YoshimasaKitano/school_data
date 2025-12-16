@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の返却確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 1 %}
+        <h1>返却確認</h1>
+        <form action="/return_confirm" method="post">
+            <div class="input_confirm_many">
+                <p>本のタイトル：{{title}}</p>
+                <input type="hidden" name="title" value="{{title}}">
+            </div>
+            <p><input type="submit" value="返却"></p>
+        </form>
+    {% else %}
+        <p class="eroor_message">その本は借りていません。</p>
+    {% endif %}
+    <a class="reverse_page" href="/return">戻る</a>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('.input_submit input[type="submit"]') 
+    btn.addEventListener('click', () => alert('返却しました。')); 
+</script>

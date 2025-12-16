@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の追加確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% if count == 0 %}
+        <h1>登録確認</h1>
+        <form action="/add_confirm" method="post" class="input_submit">
+            <div class="input_confirm_many">
+                <p>本のタイトル：{{title}}</p>
+                <input type="hidden" name="title" value="{{title}}">
+            </div>
+            <div class="input_confirm_many">
+                <p>著者名：{{author}}</p>
+                <input type="hidden" name="author" value="{{author}}">
+            </div>
+            <p><input type="submit" value="登録"></p>
+        </form>
+    {% else %}
+        <p class="eroor_message">すでに登録されています。</p>
+    {% endif %}
+    <a class="reverse_page" href="/add">戻る</a>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('.input_submit input[type="submit"]') 
+    btn.addEventListener('click', () => alert('追加しました。')); 
+</script>
