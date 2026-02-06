@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歴確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        <h1>履歴確認</h1>
+        {% if not emps %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">何も借りていません。</p>
+            </div>
+        {% else %}
+            <table class="table_design">
+                <tr>
+                    <th>本のタイトル</th>
+                    <th>借りた日時</th>
+                </tr>
+                {% for emp in emps %}
+                    <tr>
+                        <td>{{emp[0][0]}}</td>
+                        <td>{{emp[0][1]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <a class="reverse_page" href="/user_menu">戻る</a>
+    </main>
+</body>
+</html>

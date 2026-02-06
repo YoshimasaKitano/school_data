@@ -1,0 +1,17 @@
+CREATE TABLE books (
+    `id`            SERIAL PRIMARY KEY,
+    `created`       TIMESTAMP NOT NULL,
+    `modified`      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `title`         VARCHAR(255) NOT NULL,
+    `publisher`     VARCHAR(255),
+    `published`     DATE,
+    `price`         INTEGER
+);
+
+CREATE TABLE tests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    number VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    score INTEGER
+);

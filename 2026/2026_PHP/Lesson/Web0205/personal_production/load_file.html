@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ファイルから読み込み</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <h1>ファイルから単語を登録する</h1>
+    <form action="load_file_confirm.php" method="POST" enctype="multipart/form-data">
+        <label>ファイルを選択してください<input type="file" name="upload" required></label><br>
+        <button type="submit" name="operation">送信</button>
+    </form>
+    <p><a href="index.html">戻る</a></p>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('button[type="submit"]') 
+    btn.addEventListener('click', () => alert('一括登録しました。')); 
+</script>

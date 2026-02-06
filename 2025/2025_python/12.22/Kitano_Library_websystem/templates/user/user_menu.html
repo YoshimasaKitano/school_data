@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        {% if count == 1 %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">空白で入力しないでください。</p>
+            </div>
+        {% else %}
+            <h1>ユーザーモード</h1>
+            <ul class="user_ul">
+                <li>
+                    <a href="/borrow">
+                        <h2>本の貸出</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="/return">
+                        <h2>本の返却</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user_library">
+                        <h2>本の一覧</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="/history">
+                        <h2>履歴確認</h2>
+                    </a>
+                </li>
+            </ul>
+        {% endif %}
+        <a class="reverse_page" href="/user">戻る</a>
+    </main>
+</body>
+</html>

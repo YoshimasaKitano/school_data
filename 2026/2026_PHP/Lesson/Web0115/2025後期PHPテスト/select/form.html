@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCA学生用テスト管理システム</title>
+    <style>
+        h1 {
+            margin: 0 auto;
+            color: #ca0b5b;
+        }
+    </style>
+</head>
+<body>
+    <h1>OCA学生用テスト管理システム</h1>
+    <h3>学生のテスト結果を登録</h3>
+    <form action="results.php" method="GET">
+        <p>学籍番号：<input type="text" name="number" value="" required></p>
+        <p>名前：<input type="text" name="name" value="" required></p>
+        <p>テスト名：<input type="text" name="test" value="" required></p>
+        <p>教科：
+            <select name="subject">
+                <option value="" hidden>選択してください</option>
+                <option value="English">英語</option>
+                <option value="Japan">国語</option>
+                <option value="Math">数学</option>
+            </select>
+        </p>
+        <p>点数：<input type="text" name="score" value="" required></p>
+        <button type="submit" name="operation" value="search">登録</button>
+    </form>
+    <h3>学生のテスト結果検索</h3>
+    <form action="results.php" method="POST">
+        <p>学籍番号：<input type="text" name="number" value="" required></p>
+        <p>テスト名：<input type="text" name="test" value="" required></p>
+        <button type="submit" name="operation" value="search">検索</button>
+    </form>
+</body>
+</html>

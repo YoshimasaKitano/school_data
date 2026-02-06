@@ -1,0 +1,7 @@
+CREATE TABLE notebooks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vocabulary VARCHAR(255) UNIQUE NOT NULL,
+    mean VARCHAR(255),
+    category VARCHAR(255),
+    index_number INT(255)
+);

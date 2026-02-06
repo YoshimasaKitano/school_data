@@ -1,0 +1,1 @@
+enable→特権→configure terminal → configモード→exit →特権→disable →非特権

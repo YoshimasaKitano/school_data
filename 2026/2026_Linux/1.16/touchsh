@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# touchsh コマンド
+# 第一引数のファイル名で空ファイルを作成
+# 引数がない場合は、エラーメッセージを表示
+# 作成したからファイルにecho でシェバンを追加
+# 作成したファイルのパーミッション変更 +x
+# vimで開く
+
+# ファイル名:touchsh
+# スクリプトの説明
+# 新規ファイルを作成して、実行権限を付与
+# vimで開く
+
+# 1. 引数があるかチェック
+# FILENAME変数に第一引数の文字列を代入
+if [ -z "$1" ]; then
+	echo "エラー: 引数がありません。作成するファイル名を指定してください。"
+	echo "使用例: touchsh newscript.sh"
+	exit 1 # 終了コードを1にセット
+fi
+
+FILENAME=$1
+
+
+# 2. 同名のファイルが既に存在するかチェック( [ -e を使用)
+if [ -e "$FILENAME" ]; then
+	echo "エラー: '$FILENAME'は既に存在します。上書き防止のため処理を中止します。"
+	exit 1
+fi
+
+# 3. ファイル内容の組み立て
+# 3-1 シェバンを書き込んでファイル作成(上書き注意)
+echo -e "#!/bin/bash" > "$FILENAME"
+
+# 3-2 ファイル名をコメント
+echo -e "#ファイル名: $FILENAME" >> "$FILENAME"
+
+# 3-3 作成日をコメント
+CREATED_AT=$(date "+%Y-%m-%d")
+echo -e "#作成日付: $CREATED_AT\n" >> "$FILENAME"
+
+# 4. 実行権限を追加
+chmod +x "$FILENAME"
+
+# 5. メッセージを表示してvimで開く
+
+# ヒント vim +n エディタを開いたときにn行目に移動します。
+
+echo "ファイルを生成しました: $FILENAME"
+vim +4 "$FILENAME"

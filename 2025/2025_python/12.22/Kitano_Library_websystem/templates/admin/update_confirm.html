@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の更新確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        {% if count == 1 %}
+            <h1>登録確認</h1>
+            <form action="/update_confirm" method="post" class="input_submit">
+                <div class="input_confirm_many">
+                    <p>本のタイトル：{{title}}</p>
+                    <input type="hidden" name="title" value="{{title}}">
+                </div>
+                <div class="input_confirm_many">
+                    <p>新しい著者名：{{new_author}}</p>
+                    <input type="hidden" name="new_author" value="{{new_author}}">
+                </div>
+                <p><input type="submit" value="更新"></p>
+            </form>
+        {% elif count == 2 %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">空白で入力しないでください。</p>
+            </div>
+        {% else %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">その本は存在しません。</p>
+            </div>
+        {% endif %}
+        <a class="reverse_page" href="/update">戻る</a>
+    </main>
+</body>
+</html>
+<script> 
+    const btn = document.querySelector('.input_submit input[type="submit"]') 
+    btn.addEventListener('click', () => alert('更新しました。')); 
+</script>

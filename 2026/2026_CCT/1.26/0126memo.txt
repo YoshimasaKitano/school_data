@@ -1,0 +1,110 @@
+7-zip→解凍・圧縮サイト
+→圧縮率がいい
+→Javaで使うかも
+
+偽サイトと見分ける方法
+・ドメイン名
+・ハッシュ値
+
+Show-ControlPanelItem -CanonicalName 〇〇
+→コントロールパネルの〇〇の項目を実行する
+
+Get-ControlPanelItem
+→項目一覧を見ることができる
+
+Stop-Computer
+
+Get-WmiObject
+→WMIのオブジェクトを表示する
+→-ComputerNameで一覧を整列して表示する
+
+WMI→Microsoftが開発したWindowsシステムを管理するための技術・アーキテクチャ
+
+Get-WmiObject -Class Win32_BIOS -ComputerName .
+→BIOSの情報を表示する
+
+Get-WmiObject -Class Win32_Processor -ComputerName .
+→CPUの情報を表示する
+
+Get-WmiObject -Class Win32_LogicalDisk -ComputerName .
+→ディスクの情報を表示する
+
+Get-WmiObject -Class Win32_PhysicalMemory -ComputerName .
+→物理メモリの情報を表示する
+
+Get-WmiObject -Class Win32_Product -ComputerName .
+→インストールしたプログラムの一覧を表示する
+
+コマンドプロンプトで作ったものをパッチ
+
+パワーシェルで作ったものをパワーシェル
+
+スクリプトの実行ポリシー
+PowerShellスクリプトは、初期状態では実行できない
+
+署名
+→セキュリティ機関が安全なスクリプトであることを証明する
+
+Get-ExecutionPolicy
+→実行ポリシーの確認
+
+Set-ExecutionPolicy 〇〇
+→〇〇に実行ポリシーを変更
+
+RemoteSigned→自分で作成したもののみ動く
+
+ISE
+→Windows PowerShell ISEを開く
+
+psファイルの実行方法
+ファイルから右クリック→パワーシェルで実行
+
+ISEで実行
+.\ps_test1.ps1
+→パスで実行
+
+再生ボタンを押す(F5)でも実行可能
+
+変数の代入
+$変数名で実施
+$tax = 0.08
+Write-Host $tax
+
+コマンドレットで実施する
+New-Variable a -Value 0.08
+Write-Host $a
+→代入時、$はつけない
+
+$a = 1
+$b = 2
+$c = $a + $b
+Write-Host $c ### 3
+→int型
+
+$a = "1"
+$b = "2"
+$c = $a + $b
+Write-Host $c ### 12
+→str型
+
+ダブルクオーテーションで囲むと文字列
+→変数は変数に代入されているものが出力される
+
+シングルクオーテーションで囲ったものはすべてその文字列で表示される
+
+ヒア文字は、@" で始まり、 "@だけの行で終わる文字列
+文字列に含まれる改行は、そのまま改行として表示される
+→変数の中で改行ができる
+
+Set-PSDebug -Strict
+→エラーを表示してくれる
+
+変数.GetType()
+→変数のデータ型を確認することができる
+
+[datatype]変数名
+→明示的にデータタイプを記述する
+→指定したデータ型以外の型で変数に代入するとエラーになる
+
+Boolean, Byte, Char, DateTime, Decimal, Double, Int32, Int64, Object, SByteなど
+

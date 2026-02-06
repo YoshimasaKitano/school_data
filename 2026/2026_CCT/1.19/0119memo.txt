@@ -1,0 +1,102 @@
+パワーシェルとはMicrosoftが開発したスクリプト言語およびCUIの1つ
+CUIは主にテキストを使って、パソコンを動かしているWindowsOSへ直接コマンド命令を下せる
+コマンドという名の通り、PowerShellを直接操作するのにマウスは必要ない。
+
+コマンドプロンプトとの違い
+どちらも同じCUIだが、コマンドプロンプトが抱えているいくつかの問題点を改良したものになっている
+
+PowerShellのメリット
+コマンドレットを使える→従来のコマンドをわかりやすくしたもの。動詞-名詞という命名規則で作られており、従来よりも直感的にコマンドの内容を把握しやすい。(意外とそうでもない)
+Microsoftサービスも操作できる→Office365やExchangeといったMicrosoftが提供するクラウドサービスなどが利用できる。
+複数の命令を組み合わせて高度な処理ができる→パイプラインが備わっている。(Linuxと同じ)
+統合開発環境(PowerShell ISE)が使える
+
+Get-Command→コマンドレット一覧が見れるコマンドレット
+
+Out-File→データを保存するコマンドレット
+
+PowerShellの起動
+Windowsマークを右クリック→ターミナル(管理者)を押す
+
+Get-PSDrive→コマンドレットでドライブの一覧を表示する
+→Freeが空き容量
+→Usedが使用量
+→合計は自分で足さないといけない
+
+Get-location→カレントディレクトリを表示する
+→pwd、glのエイリアスが定義されている
+
+Get-ChildItem alias:→エイリアス一覧を表示する
+
+set-location 〇〇→〇〇へ自分の位置を移動
+→正式に書くときはSet-Location -Path c:\〇〇というふうに書く
+→Pathは省略できる
+→cd、chdir、slのエイリアスが定義されている
+
+Invoke-Item 〇〇→〇〇の拡張子に紐づいたアプリケーションで〇〇を実行する
+→iiのエイリアスが定義されている
+
+Invoke-Item .→自分のカレントディレクトリのエクスプローラーを開いてくれる
+→ii .でも同じ結果を得られる
+
+New-Item -Path 〇〇 -ItemType Directory→ディレクトリの作成
+→MkDirは関数、mdはMkDirのエイリアスとなっている
+
+プロンプトで、コマンドレットは薄黄色、オプションはグレー、自分で決める名詞は白色で表示されている
+
+New-Item -Path 〇〇 -ItemType File→ファイルの作成
+]
+New-Item -Path 〇〇 -ItemType File -Value "△△"→ファイルに△△を記述して作成する
+
+-Force→同じ名前の既存ファイルがあっても強制的にファイルを作成するオプション
+
+Rename-Item -Path 〇〇 -NewName △△→〇〇を△△に名前を変更する
+→ren、rniのエイリアスが定義されている
+
+Copy-Item -Path 〇〇 -Destination △△→〇〇を△△にコピーする
+→-Forceをつけるとすでに存在する場合は上書き保存
+→-Recurseをつけるとディレクトリの中のものも含める
+→copy、cp、cpiのエイリアスが定義されている
+
+Move-Item -Path 〇〇 -Destination △△→〇〇を△△に移動する
+→-Forceをつけるとすでに存在する場合は上書き保存
+→mi、move、mvのエイリアスが定義されている
+
+Remove-Item 〇〇→〇〇の削除
+→-WhatIfをつけると何を消すのか教えてくれる(実際にはまだ消えていない)
+→-Confirmをつけると一つ一つ消すものを確認しながら消していくことができる(実際に消えていく)
+→del、erase、rd、ri、rm、rmdirのエイリアスが定義されている
+
+Get-Content -Path 〇〇→〇〇の表示
+→-Pathではなく-LiteralPathにすると記述されたとおりに使用される。ワイルドカードとして解釈される文字はない。
+→-TotalCount 〇をつけるとファイルの先頭の〇行を表示する
+→-Tail 〇をつけるとファイルの最後から〇行を表示する
+
+Set-Clipboard→クリップボードにコピーする
+→Get-Content -Path 〇〇 | Set-Clipboardのようにすると〇〇の内容をクリップボードにコピーできる
+
+
+演習
+①ドライブの空き容量は何GBですか
+Get-PSDrive
+798.39GB
+
+②カレントディレクトリはどこですか？
+Get-Location
+C:\Work
+
+③Cドライブ直下にsampleフォルダを作成する
+New-Item -Path C:\sample -ItemType Directory
+
+④サンプルフォルダ中に移動して、test.txtを作成する
+Set-Location C:\sample\
+New-Item -Path test.txt -ItemType File -Value "2026/01/19"
+
+⑤test.txtを実行して、本日日付を入力する↑
+
+⑥test.txtをBackupフォルダにコピーする
+Copy-Item -Path test.txt -Destination C:\Work\Backup\
+
+⑦sampleフォルダのtest.txtを削除する
+Remove-Item .\test.txt -WhatIf(確認作業)
+Remove-Item .\test.txt

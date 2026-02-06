@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の一覧画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        <h1>本の一覧</h1>
+        {% if count == 1 %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">本がありません。</p>
+            </div>
+        {% else %}
+            <table class="table_design">
+                <tr>
+                    <th>タイトル</th>
+                    <th>著者名</th>
+                    <th>貸出可否</th>
+                </tr>
+                {% for emp in emps %}
+                    <tr>
+                        <td>{{emp[0]}}</td>
+                        <td>{{emp[1]}}</td>
+                        <td>
+                            {% if emp[2] == 1 %}
+                                可
+                            {% else %}
+                                不可
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table> 
+        {% endif %}
+        <a class="reverse_page" href="/admin_menu">戻る</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の貸出画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        {% if count == 1 %}
+            <div class="error_stracture">
+                <img src="{{ url_for('static', filename='images/ojigi_animal_kuma.png') }}" alt="お辞儀をしているクマの画像">
+                <p class="error_message">最大3冊までです。</p>
+            </div>
+        {% else %}
+            <h1>本の貸出</h1>
+            <form action="/borrow" method="post" class="input_box">
+                <p>本のタイトル：<input type="text" name="title" required></p>
+                <p><input type="submit" value="送信"></p>
+            </form>
+        {% endif %}
+        <a class="reverse_page" href="/user_menu">戻る</a>
+    </main>
+</body>
+</html>

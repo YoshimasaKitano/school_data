@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の検索画面</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <p class="header_subtitle">OCALibrary</p>
+        <div class="header_stracture">
+            <p class="header_title">OCA図書館</p>
+            <p class="header_message">～Welcome to OCA Library～</p>
+        </div>
+    </header>
+    <main>
+        <h1>本の検索</h1>
+        <form action="/search" method="post" class="input_box">
+            <p>キーワードを入力：<input type="text" name="keyword" required></p>
+            <p><input type="submit" value="検索"></p>
+        </form>
+        <a class="reverse_page" href="/admin_menu">戻る</a>
+    </main>
+</body>
+</html>
